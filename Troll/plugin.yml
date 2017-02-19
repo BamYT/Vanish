@@ -1,9 +1,0 @@
-name: Troll
-main: Troll\Main
-api: [1.0.0, 2.0.0, 3.0.0]
-author: BääämYT
-version: 1.0
-commands:
-      Vanish:
-        description: Unsichtbarkeit
-        aliases: [V]
