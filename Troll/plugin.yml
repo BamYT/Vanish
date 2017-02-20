@@ -7,3 +7,6 @@ commands:
       Vanish:
         description: "macht Unsichtbar"
         aliases: [v]
+      Troll:
+        description: "Gibt Troll Items"
+        aliases: [t]

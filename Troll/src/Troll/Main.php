@@ -38,6 +38,11 @@ class Main extends PluginBase implements Listener
         $player->getInventory()->setItem(0, Item::get(341)->setCustomName(C::BOLD . C::GREEN . "Vanish on"));
         $player->getInventory()->setItem(8, Item::get(358)->setCustomName(C::BOLD . C::RED . "Vanish off"));
     }
+    public function titems(Player $player)
+    {
+        $player->getInventory()->clearAll();
+        $player->getInventory()->setItem(8, Item::get(341)->setCustomName(C::BOLD . C::RED . "Bäääck"));
+    }
 
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args)
     {
@@ -46,6 +51,11 @@ class Main extends PluginBase implements Listener
             case "Vanish":
                 $this->vitems($sender);
                 $sender->sendMessage($this->prefix . "Du hast die Vanish Items erhalten");
+                return true;
+
+            case "Troll":
+                $this->titems($sender);
+                $sender->sendMessage($this->prefix."Troll Items erhalten");
                 return true;
         }
     }
@@ -73,6 +83,11 @@ class Main extends PluginBase implements Listener
             $player->getInventory()->clearAll();
             $player->setGamemode(0);
             $player->removeAllEffects();
+        }
+        if($item->getName() == C::BOLD . C::RED . "Bäääck")
+        {
+            $player->getInventory()->clearAll();
+            $player->setGamemode(0);
         }
     }
 
